@@ -13,7 +13,8 @@ html, body {
     margin: 0;
     background: radial-gradient(1200px 800px at 50% 0%, #0b0f1a 0%, #04050a 45%, #020308 100%);
     color: var(--text);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* tsParticles container background */
@@ -260,7 +261,9 @@ main#site {
     visibility: hidden;
     transition: opacity 0.8s ease, visibility 0.8s ease;
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
+body.show-site { overflow-y: auto; overflow-x: hidden; }
 #bg3d {
     position: absolute;
     inset: 0;
@@ -408,8 +411,10 @@ main#site {
 .hide-intro #intro { opacity: 0; visibility: hidden; transform: translateY(-18%); }
 
 @media (max-width: 560px) {
-    .cta-grid { grid-template-columns: 1fr; gap: 14px; width: min(540px, 94vw); }
+    .cta-grid { grid-template-columns: 1fr; gap: 14px; width: 94vw; margin: 28px auto; }
     .btn.cta { padding: 18px 20px; font-size: 16px; }
+    .site-hero { padding: 60px 16px 24px; }
+    .about-inner { width: 94vw; padding: 18px 16px; }
 }
 
 /* Reduced motion */
